@@ -6,11 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
-    <title>A Toast to You</title>
+    <title>A Toast to You Game</title>
 </head>
 
 <body>
-    <script src="./js/lv1game.js"></script>
+    <header onclick="toastFunction()">
+        <h1 id="toastbtn">A toast to you!</h1>
+        <div id="toast"><img id="toastImg" src="/assets/window_toast.png" alt="toastimg"></div>
+    </header>
+    <div class="rightSideContainer">
+        <div><span>0000</span></div>
+        <div><img src="/assets/window_highscoreggs.png" alt="highscoreeggs"></div>
+        <div>
+            <div>
+                <h3>A breakfast experience <br> brought to you by:</h3>
+                <p>The Bing Machine</p>
+                <p>bingthemachine@gmail.com</p>
+            </div>
+            <div>
+                <h3>Music:</h3>
+                <p>Brush Strokes by texasradiofish </p>
+                <p>(c) copyright 2022 <br>Creative Commons<br>
+                    Noncommercial License</p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <script src="./js/main.js"></script>
+        <script src="./js/lv1game.js"></script>
+    </div>
 </body>
 
 </html>

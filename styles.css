@@ -1,0 +1,157 @@
+/* importing Facinate Inline font from google for header 
+https://fonts.google.com/specimen/Fascinate+Inline#standard-styles*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+
+
+header {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Fascinate Inline';
+    font-size: 95px;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-text-stoke: rgb(0, 0, 0);
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 6px 3px 0px rgb(0, 0, 0);
+    padding-bottom: 35px;
+}
+
+/*H1 MOUSE HOVER ANIMATION*/
+/*mouse hover for h1*/
+h1:hover {
+    -webkit-animation: bounceIn 1.2s ease .0s 1 normal forwards;
+    animation: bounceIn 1.2s ease .0s 1 normal forwards;
+
+}
+
+/*keyframe animation for mouse hover over h1*/
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+        -webkit-text-fill-color: #ffd5d5
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*TOAST NOTIFICATION STYLING*/
+/* resiwzing toaster img  */
+#toastImg {
+    height: 175px;
+    width: auto;
+}
+
+#toast {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    right: 0%;
+    left: 50%;
+    bottom: 30px;
+}
+
+/* Show the toaster when clicking on the h1 */
+#toast.show {
+    visibility: visible;
+    /* Add animation: Take 0.5 seconds to fade in and out
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the toaster in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/*RIGHTSIDE CONTAINER*/
+
+
+
+.rightSideContainer {
+    position: fixed;
+    right: 160px;
+    text-align: center;
+}
+
+.rightSideContainer span {
+    font-family: 'Helvetica';
+    font-weight: 1, 3;
+    font-size: 100px;
+    padding-bottom: 10px;
+}
+
+.rightSideContainer img {
+    height: 200px;
+    width: auto;
+    padding-bottom: 60px;
+}
+
+.rightSideContainer h3 {
+    font-family: 'Helvetica';
+    font-weight: 1, 3;
+    font-size: 24px;
+}
+
+.rightSideContainer p {
+    font-family: 'Helvetica';
+    font-size: 18px;
+}
