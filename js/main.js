@@ -1,4 +1,4 @@
-//Toast element 
+//TOAST element 
 function toastFunction() {
 
     let btnToast = document.getElementById('toast');
@@ -8,3 +8,4 @@ function toastFunction() {
     // After 3 seconds, remove the show class from toast
     setTimeout(function () { btnToast.className = btnToast.className.replace("show", ""); }, 3000);
 }
+

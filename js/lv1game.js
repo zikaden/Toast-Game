@@ -8,6 +8,9 @@ let lv1hoverjam;
 //VARIABLES click events
 let jamspace = false;
 let counter = 0;
+let jamArr = [];
+let timer = 15;
+let score = 0;
 
 //PRELOADING all assetts
 function preload() {
@@ -21,7 +24,6 @@ function preload() {
 function setup() {
     let canvas = createCanvas(1200, 800);
     canvas.parent("canvas")
-    background(255)
 }
 
 //RESIZING of images to fit the canvas
@@ -43,12 +45,15 @@ function lv1MouseHoverJam() {
 function mouseClicked() {
     if ((mouseX > 806 && mouseX < 1100) && (mouseY > 448 && mouseY < 730)) {
         jamspace = true;
+        //timer and score will reset
+        timer = 15;
+        score = 0;
+        select('#scoreid').html(score);
+        jamArr = [];
     } else {
         jamspace = false;
     }
 }
-
-
 
 //RENDERING my game
 function draw() {
@@ -57,7 +62,10 @@ function draw() {
     //render images into game
     image(lv1bground, 0, 0);
     image(lv1toast, 180, 124);
-    image(lv1stawjam, 806, 448);
+    image(lv1stawjam, 806, 448)
+    //render timer into game
+    textSize(85);
+    text(timer, width / 57, height / 9);
     //initializing mousehover effect
     lv1MouseHoverJam();
     //initializing take jam when clicking on jamglass
@@ -67,8 +75,32 @@ function draw() {
     //initializing jamming when having jam
     if (mouseIsPressed) {
         if (jamspace) {
-            ellipse(mouseX, mouseY, 10, 10);
-            console.log('jamjamjamajam')
+            //create array//add object to array with mouseX and mouseY
+            if ((mouseX != mouseX) && (mouseY != mouseY)) {
+                jamArr.push({ mouseX, mouseY })
+            } for (let i = 0; i < jamArr.length; i++) {
+                let x = jamArr[i].mouseX
+                let y = jamArr[i].mouseY
+                image(lv1curserjam, x, y)
+            }
+            //the timer will stop at 0 and jamspace will be turned off
+            if (frameCount % 40 == 0 && timer > 0) {
+                timer--;
+            }
+            if (timer == 0) {
+                jamspace = false
+            }
+            //
+            if (frameCount % 30 == 0 && ((mouseX != mouseX) && (mouseY != mouseY))) {
+                if (((mouseX > 200 && mouseX < 648) && (mouseY > 330 && mouseY < 638)) ||
+                    ((mouseX > 180 && mouseX < 658) && (mouseY > 126 && mouseY < 331))) {
+                    score += 100;
+                    select('#scoreid').html(score);
+                } else {
+                    score -= 150;
+                    select('#scoreid').html(score);
+                }
+            }
         }
     }
 }
