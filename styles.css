@@ -124,12 +124,9 @@ h1:hover {
 
 /*RIGHTSIDE CONTAINER*/
 
-
-
 .rightSideContainer {
-    position: fixed;
-    right: 160px;
     text-align: center;
+    padding-left: 6rem;
 }
 
 .rightSideContainer span {
@@ -154,4 +151,10 @@ h1:hover {
 .rightSideContainer p {
     font-family: 'Helvetica';
     font-size: 18px;
+}
+
+/*GAME CONTAINER*/
+.gamecontainer {
+    display: flex;
+    flex-wrap: wrap;
 }
