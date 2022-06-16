@@ -76,12 +76,13 @@ function draw() {
     if (mouseIsPressed) {
         if (jamspace) {
             //create array//add object to array with mouseX and mouseY
-            if ((mouseX != mouseX) && (mouseY != mouseY)) {
-                jamArr.push({ mouseX, mouseY })
+            if ((mouseX != pmouseX) && (mouseY != pmouseY)) {
+                jamArr.push({ mouseX, mouseY });
+                console.log(mouseX);
             } for (let i = 0; i < jamArr.length; i++) {
                 let x = jamArr[i].mouseX
                 let y = jamArr[i].mouseY
-                image(lv1curserjam, x, y)
+                image(lv1curserjam, x, y);
             }
             //the timer will stop at 0 and jamspace will be turned off
             if (frameCount % 40 == 0 && timer > 0) {
@@ -91,7 +92,7 @@ function draw() {
                 jamspace = false
             }
             //
-            if (frameCount % 30 == 0 && ((mouseX != mouseX) && (mouseY != mouseY))) {
+            if (frameCount % 30 == 0 && ((mouseX != pmouseX) && (mouseY != pmouseY))) {
                 if (((mouseX > 200 && mouseX < 648) && (mouseY > 330 && mouseY < 638)) ||
                     ((mouseX > 180 && mouseX < 658) && (mouseY > 126 && mouseY < 331))) {
                     score += 100;
