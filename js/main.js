@@ -9,3 +9,17 @@ function toastFunction() {
     setTimeout(function () { btnToast.className = btnToast.className.replace("show", ""); }, 3000);
 }
 
+//Activate and Stop music
+
+let music = new Audio('/assets/lv1_taxasradiofish.mp3');
+let isPlaying = false;
+
+function playMusic() {
+    isPlaying ? music.pause() : music.play();
+};
+music.onplaying = function () {
+    isPlaying = true;
+};
+music.onpause = function () {
+    isPlaying = false;
+};

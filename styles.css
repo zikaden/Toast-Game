@@ -157,3 +157,7 @@ h1:hover {
     display: flex;
     flex-wrap: wrap;
 }
+
+#musicbtn {
+    height: 50px;
+}
