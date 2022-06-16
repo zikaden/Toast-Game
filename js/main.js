@@ -11,7 +11,7 @@ function toastFunction() {
 
 //Activate and Stop music using toggler switch
 
-let music = new Audio('./assets/lv1_taxasradiofish.mp3');
+let music = new Audio('assets/lv1_taxasradiofish.mp3');
 let isPlaying = false;
 
 function playMusic() {
