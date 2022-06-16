@@ -14,11 +14,11 @@ let score = 0;
 
 //PRELOADING all assetts
 function preload() {
-    lv1bground = loadImage('./assets/lv1_background.png');
-    lv1toast = loadImage('./assets/lv1_toast.png');
-    lv1stawjam = loadImage('./assets/lv1_jam_strawberry.png');
-    lv1curserjam = loadImage('./assets/lv1_curser_jam_strawberry.png');
-    lv1hoverjam = loadImage('./assets/lv1_hover_curser_jam_strawberry.png');
+    lv1bground = loadImage('/assets/lv1_background.png');
+    lv1toast = loadImage('/assets/lv1_toast.png');
+    lv1stawjam = loadImage('/assets/lv1_jam_strawberry.png');
+    lv1curserjam = loadImage('/assets/lv1_curser_jam_strawberry.png');
+    lv1hoverjam = loadImage('/assets/lv1_hover_curser_jam_strawberry.png');
 }
 //SETUP
 function setup() {
